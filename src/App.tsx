@@ -1,10 +1,20 @@
-import "./styles.css";
+import React from 'react';
+import Products from './components/Products'
+import NavBar from './components/NavBar'
+import configureProdStore from './hooks-store/products-store';
+import configureCartStore from './hooks-store/cart-store';
 
-export default function App() {
+import './App.css';
+configureProdStore()
+configureCartStore()
+
+function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+        <NavBar />
+      <Products />
     </div>
   );
 }
+
+export default App;
